@@ -1,0 +1,1 @@
+java -jar C:\github\Testerra\lastUpdate\Selnium-Grid\selenium-server-4.25.0.jar hub

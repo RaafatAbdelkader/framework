@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="methods" thread-count="4">
+    <listeners>
+        <listener class-name="base.MyListener"></listener>
+    </listeners>
+    <test name="reg">
+        <packages>
+            <package name="automationP.testcases"></package>
+        </packages>
+    </test>
+</suite>

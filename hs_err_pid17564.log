@@ -1,0 +1,62 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 464336 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (arena.cpp:189), pid=17564, tid=19356
+#
+# JRE version: Java(TM) SE Runtime Environment (17.0+35) (build 17+35-LTS-2724)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (17+35-LTS-2724, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -ea -Didea.test.cyclic.buffer.size=1048576 -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.3\lib\idea_rt.jar=54091:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.3\bin -Dfile.encoding=UTF-8 com.intellij.rt.testng.RemoteTestNGStarter -usedefaultlisteners false -socket54090 @w@C:\Users\BluRay\AppData\Local\Temp\idea_working_dirs_testng.tmp -temp C:\Users\BluRay\AppData\Local\Temp\idea_testng.tmp
+
+Host: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz, 8 cores, 7G,  Windows 10 , 64 bit Build 22621 (10.0.22621.3958)
+Time: Sat Oct 12 19:06:07 2024 W. Europe Daylight Time elapsed time: 24.770638 seconds (0d 0h 0m 24s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002317ec21e90):  JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=19356, stack(0x000000cadbd00000,0x000000cadbe00000)]
+
+
+Current CompileTask:
+C2:  24770 2722   !   4       java.util.jar.Attributes::read (530 bytes)
+
+Stack: [0x000000cadbd00000,0x000000cadbe00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x66f8ea]
+V  [jvm.dll+0x7ce224]
+V  [jvm.dll+0x7cf9ce]
+V  [jvm.dll+0x7d0033]
+V  [jvm.dll+0x242bb5]
+V  [jvm.dll+0xaa05b]
+V  [jvm.dll+0xaa5ec]
+V  [jvm.dll+0x2a954f]
+V  [jvm.dll+0x5784b9]
+V  [jvm.dll+0x21de2d]
+V  [jvm.dll+0x21e20f]
+V  [jvm.dll+0x217ada]
+V  [jvm.dll+0x214fb5]
+V  [jvm.dll+0x1a168d]
+V  [jvm.dll+0x2248f8]
+V  [jvm.dll+0x222a5c]
+V  [jvm.dll+0x78422b]
+V  [jvm.dll+0x77e7ea]

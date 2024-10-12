@@ -1,0 +1,17 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="smoke" parallel="methods" thread-count="5">
+    <listeners>
+        <listener class-name="base.MyListener"></listener>
+    </listeners>
+    <test name="smoke">
+        <groups>
+            <run>
+                <include name="smoke"></include>
+            </run>
+        </groups>
+        <packages>
+            <package name="automationP.testcases"></package>
+        </packages>
+    </test>
+</suite>
