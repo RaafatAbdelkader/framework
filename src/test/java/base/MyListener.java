@@ -73,6 +73,7 @@ public class MyListener implements ITestListener
     @Override
     public void onFinish(ITestContext context) {
         ITestListener.super.onFinish(context);
+        System.out.println("Report has been saved to: "+MyExtentReport.filepath);
         ExtentReports report= (ExtentReports)context.getAttribute("report");
         report.flush();
     }
