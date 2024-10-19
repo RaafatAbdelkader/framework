@@ -51,7 +51,12 @@ public class MyListener implements ITestListener
     @Override
     public void onTestSkipped(ITestResult result) {
         ITestListener.super.onTestSkipped(result);
-        exTest.get().skip("Test skipped");
+        exTest.get().skip(result.getThrowable());
+        SetupDriver setupDriver =new SetupDriver();
+        WebDriver driver = setupDriver.getDriver();
+        if (driver!= null){
+            setupDriver.removeDriver();
+        }
     }
 
     @Override
