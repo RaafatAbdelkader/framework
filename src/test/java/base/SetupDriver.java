@@ -17,6 +17,8 @@ import org.testng.Reporter;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class SetupDriver {
@@ -35,6 +37,7 @@ public class SetupDriver {
          if (browser.contains("chrome")){
             capabilities.setBrowserName("chrome");
             ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.setExperimentalOption("prefs",getDriverPrefs());
             if (headless.contains("true")) {
                 chromeOptions.addArguments("--headless");
                 chromeOptions.addArguments("--disable-gpu");
@@ -44,6 +47,10 @@ public class SetupDriver {
          }else if(browser.contains("firefox")){
              capabilities.setBrowserName("firefox");
              FirefoxOptions firefoxOptions = new FirefoxOptions();
+             getDriverPrefs().forEach((key,value)->{
+                 firefoxOptions.addPreference(key,value);
+                }
+             );
              if (headless.contains("true")) {
                 firefoxOptions.addArguments("--headless");
                  firefoxOptions.addArguments("--disable-gpu");
@@ -53,6 +60,7 @@ public class SetupDriver {
          }else{
             capabilities.setBrowserName("edge");
             EdgeOptions edgeOptions = new EdgeOptions();
+             edgeOptions.setExperimentalOption("prefs",getDriverPrefs());
             if (headless.contains("true")) {
                 edgeOptions.addArguments("--headless");
             }
@@ -76,5 +84,11 @@ public class SetupDriver {
     public void removeDriver(){
         getDriver().quit();
         driverThread.remove();
+    }
+    public Map<String,Object> getDriverPrefs(){
+        Map<String,Object> driverPrefs=new HashMap<>();
+        driverPrefs.put("profile.default_content_settings.popups",0);
+        driverPrefs.put("download.default_directory",PropReader.download_dir);
+        return driverPrefs;
     }
 }

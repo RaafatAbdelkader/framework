@@ -5,6 +5,7 @@ import java.util.Properties;
 
 public class PropReader {
     static String  filepath="src/test/resources/prop.properties";
+    static  String download_dir= System.getProperty("user.dir")+"\\download";
     public static Object getProp(String key){
         //test -Psmoke -Dbrowser=chrome
         if (System.getProperty(key)!=null){

@@ -1,0 +1,27 @@
+[
+    {
+        "self": "https://raafatabdelkader.atlassian.net/rest/api/3/attachment/10006",
+        "id": "10006",
+        "filename": "tc_1_1729332865249.png",
+        "author": {
+            "self": "https://raafatabdelkader.atlassian.net/rest/api/3/user?accountId=63298d7061dbef2805bc2ac4",
+            "accountId": "63298d7061dbef2805bc2ac4",
+            "emailAddress": "raafat.abdelmalek77@gmail.com",
+            "avatarUrls": {
+                "48x48": "https://secure.gravatar.com/avatar/464ce7a2f882a59cf9232e550e90b7bb?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRA-1.png",
+                "24x24": "https://secure.gravatar.com/avatar/464ce7a2f882a59cf9232e550e90b7bb?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRA-1.png",
+                "16x16": "https://secure.gravatar.com/avatar/464ce7a2f882a59cf9232e550e90b7bb?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRA-1.png",
+                "32x32": "https://secure.gravatar.com/avatar/464ce7a2f882a59cf9232e550e90b7bb?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRA-1.png"
+            },
+            "displayName": "Raafat Abdelkader",
+            "active": true,
+            "timeZone": "Europe/Vienna",
+            "accountType": "atlassian"
+        },
+        "created": "2024-10-27T16:07:48.999+0100",
+        "size": 7438628,
+        "mimeType": "image/png",
+        "content": "https://raafatabdelkader.atlassian.net/rest/api/3/attachment/content/10006",
+        "thumbnail": "https://raafatabdelkader.atlassian.net/rest/api/3/attachment/thumbnail/10006"
+    }
+]

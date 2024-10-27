@@ -12,6 +12,8 @@ import org.testng.ITestContext;
 import org.testng.Reporter;
 import org.testng.annotations.*;
 
+import java.time.Duration;
+
 public class Testbase {
 
     public ExtentReports report= MyExtentReport.config();
@@ -19,7 +21,7 @@ public class Testbase {
     public static ThreadLocal<ExtentTest>exTest=new ThreadLocal<>();
     public SetupDriver setupDriver=new SetupDriver();
     WebDriver driver;
-    @BeforeMethod(alwaysRun = true)
+    //@BeforeMethod(alwaysRun = true)
     public void before(){
 
         setupDriver.setDriver();
@@ -33,11 +35,12 @@ public class Testbase {
         exTest.get().log(Status.INFO, "Test started with Thread-ID: "+Thread.currentThread().getId());
         driver.get(url);
         exTest.get().log(Status.INFO,"navigated to: "+url);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
     }
 
-    @AfterMethod
+    //@AfterMethod
     public  void  after(){
-        setupDriver.removeDriver();
+      //  setupDriver.removeDriver();
     }
 
 
